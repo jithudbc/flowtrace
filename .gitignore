@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Data (too large for git)
+backend/data/raw/
+
+# Node
+node_modules/
+.next/
