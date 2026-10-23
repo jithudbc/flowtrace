@@ -1,14 +1,13 @@
 import asyncio
+
 from dotenv import load_dotenv
-
-load_dotenv("my_agents/.env")  # Load environment variables from .env file
-
-from google.adk.agents import Agent 
+from google.adk.agents import Agent
 from google.adk.models.google_llm import Gemini
 from google.adk.runners import InMemoryRunner
-from google.adk.tools import AgentTool, FunctionTool, google_search
+from google.adk.tools import google_search
 from google.genai import types
 
+load_dotenv("my_agents/.env")  # Load environment variables from .env file
 
 
 
@@ -21,7 +20,7 @@ retry_config = types.HttpRetryOptions(
 
 def log_model_call(callback_context, llm_request):
     print(f"[{callback_context.agent_name}] calling the model...")
-    return None  # None = continue normally
+    # None = continue normally
 
 
 research_agent = Agent(
